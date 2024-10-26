@@ -50,9 +50,17 @@ El proceso involucra el modelado, animación de los modelos 3D, así como la cod
     <img src="Img_Referencia/Imagen5.png" alt="Cubo Maya" width="600"/>
   </p>
 
+  <a href="docs/ejemplo.pdf" download style="display: inline-block; padding: 10px 15px; color: white; background-color: #007bff; border-radius: 5px; text-decoration: none;">
+  Descargar
+  </a>
+
   <h3>Mapa de Yucatán</h3>
   <p>
     <img src="Img_Referencia/Imagen6.png" alt="Mapa de Yucatán" width="600"/>
   </p>
+
+  <a href="docs/ejemplo.pdf" download style="display: inline-block; padding: 10px 15px; color: white; background-color: #007bff; border-radius: 5px; text-decoration: none;">
+  Descargar
+  </a>
 
 </div>
