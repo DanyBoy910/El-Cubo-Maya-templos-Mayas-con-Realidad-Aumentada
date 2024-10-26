@@ -1,5 +1,3 @@
-El Cubo Maya, templos Mayas con Realidad Aumentada
-
 The Mayan Cube, Mayan temples with Augmented Reality
 
 Abstract
@@ -7,6 +5,9 @@ Abstract
 In this work, an Augmented Reality application is described, the Mayan Cube, which provides historical and architectural information about the Mayan culture. 
 The six most important mayan temples were considered, Chichen Itzá, Uxmal, among others. 
 The general process involves modeling, animation, and coding to visualize objects in Augmented Reality.
+
+
+El Cubo Maya, templos Mayas con Realidad Aumentada
 
 Resumen
 
