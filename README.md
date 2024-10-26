@@ -63,4 +63,24 @@ El proceso involucra el modelado, animación de los modelos 3D, así como la cod
   Descargar
   </a>
 
+<h3>Marcadores</h3>
+
+<table align="center">
+  <tr>
+    <td style="text-align: center;"><img src="Documentos_imprimibles/Marcadores/pattern-ChichenMarker.png" alt="Imagen marcador 1" width="300"/></td>
+    <td style="text-align: center;"><img src="Documentos_imprimibles/Marcadores/pattern-DzibilMarker.png" alt="Imagen marcador 2" width="300"/></td>
+    <td style="text-align: center;"><img src="Documentos_imprimibles/Marcadores/pattern-EkBalamMarker.png" alt="Imagen marcador 3" width="300"/></td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><img src="Documentos_imprimibles/Marcadores/pattern-EkBalamMarker.png" alt="Imagen marcador 4" width="300"/></td>
+    <td style="text-align: center;"><img src="Documentos_imprimibles/Marcadores/pattern-MayapanMarker.png" alt="Imagen marcador 5" width="300"/></td>
+    <td style="text-align: center;"><img src="Documentos_imprimibles/Marcadores/pattern-UxmalMarker.png" alt="Imagen marcador 6" width="300"/></td>
+  </tr>
+</table>
+ <a href="Documentos_imprimibles/Marcadores/" download style="display: inline-block; padding: 10px 15px; color: white; background-color: #007bff; border-radius: 5px; text-decoration: none;">
+  Descargar
+  </a>
+  
 </div>
+
+
