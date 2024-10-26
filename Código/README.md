@@ -1,7 +1,11 @@
 # Descripciones Generales
 El proyecto "ejecutable" o "testeable" se encuentra alojado en la página de Glitch: https://piramidesmayas.glitch.me. Para fines prácticos en este repositorio he colocado los documentos imprimibles necesarios para que usted pueda probar el programa, como El Cubo Maya, el Mapa Maya y los marcadores.
 
-# Código
+#  Documentación del código
+## LICENSE
+El proyecto según Glitch utiliza la Licencia MIT, que permite a cualquier persona usar, copiar, modificar y distribuir el software sin restricciones, siempre que se incluya el aviso de copyright y la licencia en las copias. El software se proporciona "tal cual", sin garantías de ningún tipo.
+También se menciona el uso de HK Grotesk como fuente, la cual está bajo la licencia SIL OFL. Para más detalles, puedes consultar su licencia completa.
+
 ## gesture-detector.js
 Este segmento de código no es mío, lo he modificado y puede ser encontrado en: https://github.com/fcor/arjs-gestures.
 
