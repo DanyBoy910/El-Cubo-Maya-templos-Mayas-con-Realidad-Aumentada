@@ -23,11 +23,11 @@ _____________________
 
 <table>
   <tr>
-    <td><img src="ruta/a/imagen1.png" alt="Imagen 1" width="200"/></td>
-    <td><img src="ruta/a/imagen2.png" alt="Imagen 2" width="200"/></td>
+    <td><img src="Img_Referencia/Imagen1.png" alt="Imagen 1" width="200"/></td>
+    <td><img src="Img_Referencia/Imagen2.png" alt="Imagen 2" width="200"/></td>
   </tr>
   <tr>
-    <td><img src="ruta/a/imagen3.png" alt="Imagen 3" width="200"/></td>
-    <td><img src="ruta/a/imagen4.png" alt="Imagen 4" width="200"/></td>
+    <td><img src="Img_Referencia/Imagen3.png" alt="Imagen 3" width="200"/></td>
+    <td><img src="Img_Referencia/Imagen4.png" alt="Imagen 4" width="200"/></td>
   </tr>
 </table>
