@@ -26,10 +26,14 @@ El proceso involucra el modelado, animación de los modelos 3D, así como la cod
 
 ## Manual de usuario
 Para probar el proyecto se requiere un dispositivo móvil o una computadora con cámara. Además haber descargado e impreso algunos de los recursos que se dejan en la sección de [Recursos: Plantillas imprimibles o recortables](#markdown-seccion).
-* Debe acceder a la siguiente liga: https://piramidesmayas.glitch.me
+* Debe acceder a la siguiente liga: https://piramidesmayas.glitch.me.
 * Acepte los permisos que le pide el sitio web como "acceder a su cámara".
 * Con la cámara apunte a alguno de los marcadores y la pirámide aparecerá encima del marcador.
 
+**Consideraciones:**
+* Asegúrese de no mover de forma bruzca la cámara.
+* Evite que el marcador reciba reflexiones.
+* Mueva la cámara hacia adelante o atrás de forma suave hasta que la figura aparezca. *"Ni mucho que queme al santo, ni poco que no lo alumbre"* .
 <div align="center">
 
 <h2>Imágenes del proyecto</h2>
