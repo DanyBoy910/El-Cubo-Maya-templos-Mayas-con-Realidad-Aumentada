@@ -31,11 +31,11 @@ El proceso involucra el modelado, animación de los modelos 3D, así como la cod
 <table align="center">
   <tr>
     <td style="text-align: center;"><img src="Img_Referencia/Imagen1.png" alt="Imagen 1" width="200"/></td>
-    <td style="text-align: center;"><img src="Img_Referencia/Imagen2.jpg" alt="Imagen 2" width="200"/></td>
+    <td style="text-align: center;"><img src="Img_Referencia/Imagen2.jpg" alt="Imagen 2" width="400"/></td>
   </tr>
   <tr>
     <td style="text-align: center;"><img src="Img_Referencia/Imagen3.jpg" alt="Imagen 3" width="200"/></td>
-    <td style="text-align: center;"><img src="Img_Referencia/Imagen4.png" alt="Imagen 4" width="200"/></td>
+    <td style="text-align: center;"><img src="Img_Referencia/Imagen4.png" alt="Imagen 4" width="400"/></td>
   </tr>
 </table>
 
