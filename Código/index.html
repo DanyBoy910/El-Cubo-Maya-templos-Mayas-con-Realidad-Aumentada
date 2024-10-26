@@ -1,0 +1,542 @@
+<html>
+  <head>
+    <title>ProyectoFinal - RA - Daniel Rodríguez Orozco</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://raw.githubusercontent.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    
+    
+    <script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>
+    
+    
+<!----------------------------------------- MODELOS 3D DE PIRÁMIDES------------------>
+    <a-asset-item
+      id="PiramideChichen"
+      src="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/chichen.glb?v=1700160185190">
+    </a-asset-item>
+    
+    <a-asset-item
+      id="PiramideDzibil"
+      src="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/dzibil.glb?v=1700330801126">
+    </a-asset-item>
+    
+    <a-asset-item
+      id="PiramideKinich"
+      src="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/kinich.glb?v=1700332265412">
+    </a-asset-item>
+    
+    <a-asset-item
+      id="PiramideMayapan"
+      src="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/mayapan.glb?v=1700332267913">
+    </a-asset-item>
+    
+    <a-asset-item
+      id="PiramideUxmal"
+      src="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/uxmal_anim.glb?v=1701403020122">
+    </a-asset-item>
+    
+    <a-asset-item
+      id="PiramideEkBalam"
+      src="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/ekbalam.glb?v=1700332274110">
+    </a-asset-item>
+    
+    <!----------------------------------------- MODELOS 3D DE CARTELES INFORMATIVOS------------------>
+    <a-asset-item
+      id="infoChichen"
+      src="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/chichen_info.glb?v=1700356409521">
+    </a-asset-item>
+    
+    <a-asset-item
+      id="infoDzibil"
+      src="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/dzibil_info.glb?v=1700356409819">
+    </a-asset-item>
+    
+    <a-asset-item
+      id="infoKinich"
+      src="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/kinich_info.glb?v=1700356410605">
+    </a-asset-item>
+    
+    <a-asset-item
+      id="infoMayapan"
+      src="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/mayapan_info.glb?v=1700356411042">
+    </a-asset-item>
+    
+    <a-asset-item
+      id="infoUxmal"
+      src="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/uxmal_info.glb?v=1700356411366">
+    </a-asset-item>
+    
+    <a-asset-item
+      id="infoEkBalam"
+      src="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/ekbalam_info.glb?v=1700356410191">
+    </a-asset-item>
+    
+    <!----------------------------------------- MODELOS 3D DE ÁRBOLES------------------>
+    
+    <a-asset-item
+      id="arbol1"
+      src="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/arbol1.glb?v=1700356411672">
+    </a-asset-item>
+    
+    <a-asset-item
+      id="arbol2"
+      src="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/arbol2.glb?v=1700356408527">
+    </a-asset-item>
+    
+    <a-asset-item
+      id="arbol3"
+      src="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/arbol3.glb?v=1700356409119">
+    </a-asset-item>
+    
+    <!----------------------- ESTILO DE LOS BOTONES-------------------------->
+    <style>
+      #btnDer , #btnIzq{
+        position: fixed;
+        bottom: 50%;
+        transform: translateY(50%);
+        width: 60px;
+        height: 50px;
+        z-index: 1; 
+      }
+      
+      #btnIzq {
+        left: 0;
+      }
+
+      #btnDer {
+        right: 0;
+      }
+      
+      #txt_piramide {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: white;
+        background-color: black;
+        padding: 10px;
+        z-index: 1;
+      }
+      
+      #btnMarker{
+        position: fixed;
+        left:0;
+        z-index: 1;
+      }
+      
+    </style>
+  </head>
+  <body>
+    
+    <!----------------------- BOTONES Y TEXTO-------------------------->
+    <!--
+    <button id="btnMarker">Marcador: OFF</button> 
+    <button id="btnDer">-&gt;</button>
+    <button id="btnIzq">&lt;-</button>
+    <p id="txt_piramide"> Chichen Itzá </p>
+    -->
+         
+   <a-scene arjs embedded renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" id="escena" gesture-detector>
+      
+     
+     <!----------------------------------------- MODELOS 3D SIN MARCADOR ----------------------------->
+     
+     <!--
+      <a-entity 
+        id="Piramide3D" 
+        gltf-model="#PiramideChichen" 
+        position="0 -1 -3.5" 
+        rotation="0 0 0" 
+        scale="1 1 1"
+        class="clickable"
+        gesture-handler
+      ></a-entity>
+     <a-entity
+          id="Info3D"
+          active
+          gltf-model="#infoChichen"
+          position="0 1 -4"
+          rotation="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+        >
+        </a-entity>
+     -->
+      <!----------------------------------------- MARCADOR Y MODELO 3D DE CHICHEN ITZÁ ----------------------------->
+      <a-marker
+        type="pattern"
+        url="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/ChichenMarker_2.patt?v=1700329642481"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerChichen"
+      >
+
+        <a-entity
+          id="ChichenModel"
+          active
+          gltf-model="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/chichen.glb?v=1700160185190"
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="1 1 1"
+          animation-mixer
+        >
+        </a-entity>
+        
+        <a-entity
+          id="infoChichenModel"
+          active
+          gltf-model="#infoChichen"
+          position="0 2 0"
+          rotation="0 0 0"
+          scale="1 1 1"
+        >
+        </a-entity>
+      </a-marker>
+        
+     
+       <!----------------------------------------- MARCADOR Y MODELO 3D DE DZIBIL ----------------------------->
+      <a-marker
+        type="pattern"
+        url="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/pattern-DzibilMarker.patt?v=1700330529001"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerDzibil"
+      >
+        <a-entity
+          id="DzibilModel"
+          active
+          gltf-model="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/dzibil_anim.glb?v=1701393050149"
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="1 1 1"
+          animation-mixer
+        >
+        </a-entity>
+        <a-entity
+          id="infoDzibilModel"
+          active
+          gltf-model="#infoDzibil"
+          position="0 2 0"
+          rotation="0 0 0"
+          scale="1 1 1"
+        >
+        </a-entity>
+      </a-marker>
+      
+       <!----------------------------------------- MARCADOR Y MODELO 3D DE KINICH ----------------------------->
+      <a-marker
+        type="pattern"
+        url="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/KinichMarker.patt?v=1700332283994"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerKinich"
+      >
+        <a-entity
+          id="KinichModel"
+          active
+          gltf-model="#PiramideKinich"
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="1 1 1"
+        >
+        </a-entity>
+         <a-entity
+          id="infoKinichModel"
+          active
+          gltf-model="#infoKinich"
+          position="0 2 0"
+          rotation="0 0 0"
+          scale="1 1 1"
+        >
+        </a-entity>
+      </a-marker>
+      
+       <!----------------------------------------- MARCADOR Y MODELO 3D DE UXMAL ----------------------------->
+      <a-marker
+        type="pattern"
+        url="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/UxmalMarker.patt?v=1700332300450"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerUxmal"
+      >
+        <a-entity
+          id="UxmalModel"
+          active
+          gltf-model="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/uxmal_anim.glb?v=1701403583785"
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="1 1 1"
+          animation-mixer
+        >
+        </a-entity>
+         <a-entity
+          id="infoUxmalModel"
+          active
+          gltf-model="#infoUxmal"
+          position="0 2 0"
+          rotation="0 0 0"
+          scale="1 1 1"
+        >
+        </a-entity>
+      </a-marker>
+      
+       <!----------------------------------------- MARCADOR Y MODELO 3D DE EKBALAM ----------------------------->
+      <a-marker
+        type="pattern"
+        url="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/EkBalamMarker.patt?v=1700332277063"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerEkBalam"
+      >
+        <a-entity
+          id="EkBalamModel"
+          active
+          gltf-model="#PiramideEkBalam"
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="1 1 1"
+        >
+        </a-entity>
+         <a-entity
+          id="infoEkBalamModel"
+          active
+          gltf-model="#infoEkBalam"
+          position="0 2 0"
+          rotation="0 0 0"
+          scale="1 1 1"
+        >
+        </a-entity>
+      </a-marker>
+      
+       <!----------------------------------------- MARCADOR Y MODELO 3D DE MAYAPAN ----------------------------->
+      <a-marker
+        type="pattern"
+        url="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/MayapanMarker.patt?v=1700332290864"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerMayapan"
+      >
+        <a-entity
+          id="MayapanModel"
+          active
+          gltf-model="#PiramideMayapan"
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="1 1 1"
+        >
+        </a-entity>
+         <a-entity
+          id="infoMayapanModel"
+          active
+          gltf-model="#infoMayapan"
+          position="0 2 0"
+          rotation="0 0 0"
+          scale="1 1 1"
+        >
+        </a-entity>
+      </a-marker>
+     
+     <!----------------------------------------- MARCADORES ÁRBOLES ----------------------------->
+      <a-marker
+        type="pattern"
+        url="https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/ArbolMarker.patt?v=1700356583600"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerArbol"
+      >
+        <a-entity
+          id="ArbolModel"
+          active
+          gltf-model="#arbol1"
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="1 1 1"
+        >
+        </a-entity>
+      </a-marker>
+     
+      <!----------------------------------------- SCRIPT ----------------------------->
+      <script>
+        
+        //Variables
+        var selectModelo = 0;
+        var marcadorActivo = false;
+        //Obtener referencia a la escena
+        var escena = document.querySelector('#escena');
+        
+        // Obtener referencias a botones / texto
+        var btnMarker    = document.getElementById("btnMarker");
+        var btnDer       = document.getElementById("btnDer");
+        var btnIzq       = document.getElementById("btnIzq");
+        var txt_piramide = document.getElementById("txt_piramide");
+        
+        //Obtener referencia a las pirámides sin marcador
+        var piramideModelo = document.querySelector('#Piramide3D');
+        var infoModelo     = document.querySelector('#Info3D');
+        var ArbolModel     = document.querySelector('#ArbolModel');
+        
+        // Obtener referencias a cada modelo
+        var listaModelos3D = ["https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/chichen.glb?v=1700160185190", 
+                              "https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/dzibil.glb?v=1700330801126", 
+                              "https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/kinich.glb?v=1700332265412",
+                              "https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/mayapan.glb?v=1700332267913", 
+                              "https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/ekbalam.glb?v=1700332274110", 
+                              "https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/uxmal.glb?v=1700332270884"];    
+        
+        var listaInfo = ["https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/chichen_info.glb?v=1700356409521", 
+                         "https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/dzibil_info.glb?v=1700356409819", 
+                         "https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/kinich_info.glb?v=1700356410605",
+                         "https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/mayapan_info.glb?v=1700356411042", 
+                         "https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/ekbalam_info.glb?v=1700356410191", 
+                         "https://cdn.glitch.global/4eeb3eb8-4a12-4636-a02f-9ee09cb02a0d/uxmal_info.glb?v=1700356411366"];
+        
+        var listaNombresPiramides = ["Chichen Itzá", 
+                                     "Dzibilchaltún",
+                                     "Kinich Kamó",
+                                     "Mayapán",
+                                     "Ek Balám",
+                                     "Uxmal"]
+        
+        //ACTIVAR - DESACTIVAR FUNCION DE MARCADOR
+        
+        /*
+        
+        btnMarker.addEventListener('click', function() {
+          usarMarcador();
+        });
+        
+        function usarMarcador(){
+          marcadorActivo = !marcadorActivo;
+          if(marcadorActivo){
+            ocultarInterfaz();
+            btnMarker.textContent = "Marcador: ON";
+          }else{
+            mostrarInterfaz();
+            btnMarker.textContent = "Marcador: OFF";
+          }
+        }
+        
+        function mostrarInterfaz(){
+            btnDer.style.visibility = "visible";
+            btnIzq.style.visibility = "visible"; 
+            txt_piramide.style.visibility = "visible";
+            piramideModelo.setAttribute('gesture-handler', 'enabled', true);
+            piramideModelo.setAttribute('visible', true);   // Hace la entidad visible
+            infoModelo.setAttribute('gesture-handler', 'enabled', true);
+            infoModelo.setAttribute('visible', true);
+        }
+        
+        function ocultarInterfaz(){
+            btnDer.style.visibility = "hidden";
+            btnIzq.style.visibility = "hidden"; 
+            txt_piramide.style.visibility = "hidden";
+            piramideModelo.setAttribute('gesture-handler', 'enabled', false);
+            piramideModelo.setAttribute('visible', false);   // Hace la entidad invisible
+            infoModelo.setAttribute('gesture-handler', 'enabled', false);
+            infoModelo.setAttribute('visible', false);   // Hace la entidad invisible
+        }
+         
+        //FUNCIONES SIN EL MARCADOR PERSONALIZADO
+        btnDer.addEventListener('click', function() {
+          selectModelo++;
+          cambiarModelos();
+          //txt_piramide.textContent = 'El botón derecho fue presionado!';
+        });
+        
+        btnIzq.addEventListener('click', function() {
+          selectModelo--;
+          cambiarModelos();
+          //txt_piramide.textContent = 'El botón izq fue presionado!';
+        });
+        
+        function cambiarModelos(){
+          if(selectModelo >= listaModelos3D.length ){
+            selectModelo=0;
+          }
+          if(selectModelo < 0 ){
+            selectModelo=listaModelos3D.length-1;
+          }
+          
+          piramideModelo.setAttribute('gltf-model',listaModelos3D[selectModelo]);
+          infoModelo.setAttribute('gltf-model',listaInfo[selectModelo]);
+          txt_piramide.textContent = listaNombresPiramides[selectModelo];
+        }
+   
+      */
+        
+      //Eventos Marcadores
+      //Eventos Marcadores++++++++++++++++CHICHEN+++++++++++++++++++++++
+       var markerChichen = document.getElementById('markerChichen');  
+        markerChichen.addEventListener('markerFound', function (event) {
+
+        });
+        markerChichen.addEventListener('markerLost', function (event) {
+
+        });
+        
+        //Eventos Marcadores++++++++++++++++DZIBIL+++++++++++++++++++++++
+        var markerDzibil = document.getElementById('markerDzibil');  
+        markerDzibil.addEventListener('markerFound', function (event) {
+          
+          
+        });
+        markerDzibil.addEventListener('markerLost', function (event) {
+          
+        });
+        
+        //Eventos Marcadores++++++++++++++++KINICH+++++++++++++++++++++++
+        var markerKinich = document.getElementById('markerKinich');  
+        markerKinich.addEventListener('markerFound', function (event) {
+          
+        });
+        markerKinich.addEventListener('markerLost', function (event) {
+
+        });
+        
+        //Eventos Marcadores++++++++++++++++UXMAL+++++++++++++++++++++++
+        var markerUxmal = document.getElementById('markerUxmal');  
+        markerUxmal.addEventListener('markerFound', function (event) {
+
+        });
+        markerUxmal.addEventListener('markerLost', function (event) {
+
+        });
+        
+        //Eventos Marcadores++++++++++++++++EKBALAM+++++++++++++++++++++++
+        var markerEkBalam = document.getElementById('markerEkBalam');  
+        markerEkBalam.addEventListener('markerFound', function (event) {
+
+        });
+        markerEkBalam.addEventListener('markerLost', function (event) {
+
+        });
+        
+        //Eventos Marcadores++++++++++++++++MAYAPAN+++++++++++++++++++++++
+        var markerMayapan = document.getElementById('markerMayapan');  
+        markerMayapan.addEventListener('markerFound', function (event) {
+
+        });
+        markerMayapan.addEventListener('markerLost', function (event) {
+          
+        });
+        
+      </script>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
