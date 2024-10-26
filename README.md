@@ -24,6 +24,12 @@ El proceso involucra el modelado, animación de los modelos 3D, así como la cod
 **Keywords and phrases**: Realidad Aumentada, Cultura Maya, Arquitectura Maya, Modelado y Animación 3D.  
 **2020 Mathematics Subject Classification**: 68U05
 
+## Manual de usuario
+Para probar el proyecto se requiere un dispositivo móvil o una computadora con cámara. Además haber descargado e impreso algunos de los recursos que se dejan en la sección de [Recursos: Plantillas imprimibles o recortables](#markdown-seccion)
+* Debe acceder a la siguiente liga: https://piramidesmayas.glitch.me
+* Acepte los permisos que le pide el sitio web como "acceder a su cámara".
+* Con la cámara apunte a alguno de los marcadores y la pirámide aparecerá encima del marcador.
+
 <div align="center">
 
 <h2>Imágenes del proyecto</h2>
@@ -43,7 +49,7 @@ El proceso involucra el modelado, animación de los modelos 3D, así como la cod
 
 <div align="center">
 
-  <h2>Recursos: Plantillas imprimibles o recortables</h2>
+  <h2 id="markdown-seccion">Recursos: Plantillas imprimibles o recortables</h2>
 
   <h3>Cubo Maya</h3>
   <p>
